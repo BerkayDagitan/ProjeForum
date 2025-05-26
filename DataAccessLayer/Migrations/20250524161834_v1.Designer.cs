@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DataAccessLayer.Migrations
 {
-    [DbContext(typeof(Context))]
+    [DbContext(typeof(DataAccessLayer.Context.Context))]
     [Migration("20250524161834_v1")]
     partial class v1
     {
