@@ -1,11 +1,17 @@
-﻿namespace EntityLayer.Entitys
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace EntityLayer.Entitys
 {
     public class Contact
     {
+        [Key]
         public int ContactId { get; set; }
-        public string ContactName { get; set; }
-        public string ContactMail { get; set; }
-        public string ContactSubject { get; set; }
-        public string ContactMessage { get; set; }
+        [StringLength(10)]
+        public string UserName { get; set; }
+        [StringLength(50)]
+        public string UserMail { get; set; }
+        [StringLength(50)]
+        public string Subject { get; set; }
+        public string Message { get; set; }
     }
 }

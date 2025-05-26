@@ -1,9 +1,14 @@
-﻿namespace EntityLayer.Entitys
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace EntityLayer.Entitys
 {
     public class Category
     {
+        [Key]
         public int CategoryId { get; set; }
+        [StringLength(50)]
         public string CategoryName { get; set; }
+        [StringLength(200)]
         public string CategoryDescription { get; set; }
         public bool CategoryStatus { get; set; }
 
