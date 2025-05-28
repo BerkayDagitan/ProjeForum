@@ -1,17 +1,22 @@
-﻿using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
 
 namespace EntityLayer.Entitys
 {
     public class Category
     {
-        [Key]
-        public int CategoryId { get; set; }
-        [StringLength(50)]
-        public string CategoryName { get; set; }
-        [StringLength(200)]
-        public string CategoryDescription { get; set; }
-        public bool CategoryStatus { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public string Icon { get; set; }
+        public int Order { get; set; }
+        public bool IsActive { get; set; }
 
-        public ICollection<Heading> Headings { get; set; }
+        // Foreign Keys
+        public int? ParentCategoryId { get; set; }
+
+        // Navigation Properties
+        public virtual Category ParentCategory { get; set; }
+        public virtual ICollection<Category> SubCategories { get; set; }
+        public virtual ICollection<Post> Posts { get; set; }
     }
-}
+} 

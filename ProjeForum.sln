@@ -1,15 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36109.1 d17.14
+VisualStudioVersion = 17.14.36109.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjeForum", "ProjeForum\ProjeForum.csproj", "{9C501CA3-51FE-419C-8885-EAE7CAAE7FBB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjeForum.UI", "ProjeForum\ProjeForum.UI.csproj", "{9C501CA3-51FE-419C-8885-EAE7CAAE7FBB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityLayer", "EntityLayer\EntityLayer.csproj", "{FE88334A-5D8E-487F-B0E2-CB7C7ACADB70}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.csproj", "{397AE245-CD19-45A1-88D4-1796F615C9B1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLayer", "BusinessLayer\BusinessLayer.csproj", "{673EEB1D-90EA-43D7-B3B3-72D9590C7A8C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjeForumAPI", "ProjeForumAPI\ProjeForumAPI.csproj", "{9D58E7CC-9BD9-452C-9929-2280CF79FD54}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{673EEB1D-90EA-43D7-B3B3-72D9590C7A8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{673EEB1D-90EA-43D7-B3B3-72D9590C7A8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{673EEB1D-90EA-43D7-B3B3-72D9590C7A8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D58E7CC-9BD9-452C-9929-2280CF79FD54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D58E7CC-9BD9-452C-9929-2280CF79FD54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D58E7CC-9BD9-452C-9929-2280CF79FD54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D58E7CC-9BD9-452C-9929-2280CF79FD54}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
