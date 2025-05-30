@@ -11,7 +11,7 @@ namespace EntityLayer.Entitys
         public string Password { get; set; }
         public string ProfileImage { get; set; }
         public DateTime RegisterDate { get; set; }
-        public string Role { get; set; } // Normal, Moderator, Admin
+        public string Role { get; set; }
         public bool IsActive { get; set; }
 
         // Navigation Properties
