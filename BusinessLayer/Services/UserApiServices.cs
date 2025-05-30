@@ -1,18 +1,28 @@
 ﻿using EntityLayer.DTOs;
+using BusinessLayer.Interfaces;
 using DataAccessLayer.Interfaces;
-using Org.BouncyCastle.Crypto.Generators;
+using Microsoft.Extensions.Configuration;
 
-namespace DataAccessLayer.Services
+namespace BusinessLayer.Services
 {
     public class UserApiServices : IUserApiServices
     {
         private readonly HttpClient _httpClient;
         private readonly IUserRepository _repo;
+        private readonly IConfiguration _configuration;
 
-        public UserApiServices(HttpClient httpClient, IUserRepository repo)
+        public UserApiServices(HttpClient httpClient, IUserRepository repo, IConfiguration configuration)
         {
             _httpClient = httpClient;
             _repo = repo;
+            _configuration = configuration;
+
+            var baseUrl = _configuration["ApiSettings:BaseUrl"];
+            if (string.IsNullOrEmpty(baseUrl))
+            {
+                throw new ArgumentNullException(nameof(baseUrl), "API Base URL yapılandırması eksik.");
+            }
+            _httpClient.BaseAddress = new Uri(baseUrl);
         }
 
         public async Task<bool> IsUserExistsAsync(string email)

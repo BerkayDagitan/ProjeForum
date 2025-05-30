@@ -1,6 +1,6 @@
 ﻿using EntityLayer.DTOs;
 
-namespace DataAccessLayer.Services
+namespace BusinessLayer.Interfaces
 {
     public interface IUserApiServices
     {

@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 
-namespace DataAccessLayer.Interfaces
+namespace BusinessLayer.Interfaces
 {
     public interface ITokenServices
     {

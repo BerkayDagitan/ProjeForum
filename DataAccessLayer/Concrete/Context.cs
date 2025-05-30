@@ -1,12 +1,25 @@
 using EntityLayer.Entitys;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Design;
 
 namespace DataAccessLayer.Concrete
 {
     public class Context : DbContext
     {
-        public Context()
+        public Context(DbContextOptions<Context> options) : base(options)
         {
+        }
+
+        // Design-time factory
+        public class ContextFactory : IDesignTimeDbContextFactory<Context>
+        {
+            public Context CreateDbContext(string[] args)
+            {
+                var optionsBuilder = new DbContextOptionsBuilder<Context>();
+                optionsBuilder.UseSqlServer("Server=BERKAY\\SQLEXPRESS;Database=ProjeForum;Trusted_Connection=True;MultipleActiveResultSets=true;TrustServerCertificate=True");
+
+                return new Context(optionsBuilder.Options);
+            }
         }
 
         public DbSet<User> Users { get; set; }
@@ -19,14 +32,6 @@ namespace DataAccessLayer.Concrete
         public DbSet<Brand> Brands { get; set; }
         public DbSet<Model> Models { get; set; }
         public DbSet<Favorite> Favorites { get; set; }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-                optionsBuilder.UseSqlServer("Server=BERKAY\\SQLEXPRESS;Database=ProjeForum;Trusted_Connection=True;MultipleActiveResultSets=true;TrustServerCertificate=True");
-            }
-        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

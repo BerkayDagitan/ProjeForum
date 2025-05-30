@@ -1,4 +1,4 @@
-﻿namespace DataAccessLayer.Security
+﻿namespace BusinessLayer.Security
 {
     public class Token
     {
