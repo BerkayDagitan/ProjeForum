@@ -1,7 +1,8 @@
-﻿using EntityLayer.DTOs;
-using BusinessLayer.Interfaces;
+﻿using BusinessLayer.Interfaces;
 using DataAccessLayer.Interfaces;
+using EntityLayer.DTOs;
 using Microsoft.Extensions.Configuration;
+using Newtonsoft.Json;
 
 namespace BusinessLayer.Services
 {
@@ -37,7 +38,11 @@ namespace BusinessLayer.Services
 
         public async Task<bool> RegisterUserAsync(UserRegisterDTO userRegisterDTO)
         {
-            throw new NotImplementedException();
+            StringContent content = new StringContent(JsonConvert.SerializeObject(userRegisterDTO));
+            content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
+            var result = await _httpClient.PostAsync("user/Register", content);
+
+            return result.IsSuccessStatusCode;
         }
 
         public async Task<UserLoginDTO> ValidateUser(string username, string password)
